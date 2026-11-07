@@ -252,4 +252,256 @@
       padding-left: 1.25rem;
       font-size: 0.94rem;
       color: var(--text-muted);
-      line-
+      line-height: 1.6;
+    }
+
+    ul.impact-list li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--text-dim);
+    }
+
+    ul.impact-list li strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 4rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      color: var(--text-dim);
+    }
+
+    /* Print Stylesheet */
+    @media print {
+      body { padding: 0; background: #fff; }
+      .wrapper { max-width: 100%; }
+      header { border-bottom-width: 1px; }
+      .content-grid { gap: 2rem; }
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      body { padding: 2rem 1.25rem; }
+      header { flex-direction: column; align-items: flex-start; }
+      .header-meta { text-align: left; }
+      .content-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .header-main h1 { font-size: 2.25rem; }
+      .summary-text { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+
+    <!-- Header -->
+    <header>
+      <div class="header-main">
+        <h1>Akshay Joshi</h1>
+        <p>AI & Data Strategy Manager — Healthcare Value-Based Care</p>
+      </div>
+      <div class="header-meta">
+        <span>Atlanta, Georgia</span>
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn Profile ↗</a>
+      </div>
+    </header>
+
+    <!-- Executive Summary -->
+    <section class="summary-section">
+      <p class="summary-text">
+        Technical Project Manager and Data Strategist leading enterprise healthcare implementations. Specializes in recovering complex Value-Based Care (VBC) portfolios from risk to stable delivery, orchestrating cross-functional teams of 25+ resources, and translating clinical informatics into measurable member outcomes and provider enablement.
+      </p>
+    </section>
+
+    <!-- Two-Column Layout -->
+    <div class="content-grid">
+
+      <!-- Left Rail: Education, Tools, Certifications -->
+      <aside class="sidebar">
+
+        <section>
+          <h2 class="section-heading">Education</h2>
+          <div class="item-list">
+            <div class="sidebar-block">
+              <h3>North Carolina State University</h3>
+              <p>Master of Science, Operations Research</p>
+              <div class="sub-detail">Raleigh, North Carolina</div>
+            </div>
+            <div class="sidebar-block">
+              <h3>RTM Nagpur University</h3>
+              <p>Bachelor of Engineering, Mechanical</p>
+              <div class="sub-detail">Nagpur, India</div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="section-heading">Core Competencies</h2>
+          <div class="tag-group">
+            <div class="tag-category">Domain</div>
+            <div class="tag-values">Value-Based Care (VBC), Population Health Informatics, Technical Project Management, Healthcare AI & Solution Architecture.</div>
+            
+            <div class="tag-category">Analytics & Data</div>
+            <div class="tag-values">Machine Learning, Predictive Forecasting, Google Cloud Platform (GCP), Snowflake, SQL, Python, Tableau.</div>
+
+            <div class="tag-category">Execution</div>
+            <div class="tag-values">UiPath RPA, Client & Vendor Governance, Data Governance, Whole Health Strategy.</div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="section-heading">Certifications</h2>
+          <div class="item-list">
+            <div class="sidebar-block">
+              <h3>Deloitte Certified Product Manager</h3>
+            </div>
+            <div class="sidebar-block">
+              <h3>Tableau Certified Consultant</h3>
+            </div>
+            <div class="sidebar-block">
+              <h3>OpenAI Prompt Engineering</h3>
+            </div>
+            <div class="sidebar-block">
+              <h3>Microsoft Azure (AZ-900)</h3>
+            </div>
+            <div class="sidebar-block">
+              <h3>Dataiku Core Designer</h3>
+            </div>
+            <div class="sidebar-block">
+              <h3>UiPath RPA Associate</h3>
+            </div>
+            <div class="sidebar-block">
+              <h3>Alteryx Micro-Credential</h3>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="section-heading">Academic Service</h2>
+          <div class="sidebar-block">
+            <h3>NC State University</h3>
+            <p>Graduate Writing Consultant (2017–2018)</p>
+          </div>
+        </section>
+
+      </aside>
+
+      <!-- Main Column: Detailed Experience -->
+      <main class="main-column">
+
+        <section>
+          <h2 class="section-heading">Professional Experience</h2>
+
+          <!-- Deloitte Entry -->
+          <article class="experience-entry">
+            <div class="org-header">
+              <div class="org-name">Deloitte Consulting LLP</div>
+              <div class="org-location-tenure">2018 — Present</div>
+            </div>
+
+            <div class="role-ladder">
+              <div class="role-tier current">
+                <span class="role-tier-title">AI & Data Manager</span>
+                <span class="role-tier-date">June 2025 — Present</span>
+              </div>
+              <div class="role-tier">
+                <span class="role-tier-title">Senior Strategy & AI Consultant</span>
+                <span class="role-tier-date">June 2022 — May 2025</span>
+              </div>
+              <div class="role-tier">
+                <span class="role-tier-title">Strategy & AI Consultant</span>
+                <span class="role-tier-date">June 2020 — May 2022</span>
+              </div>
+              <div class="role-tier">
+                <span class="role-tier-title">Business Technology Analyst</span>
+                <span class="role-tier-date">July 2018 — May 2020</span>
+              </div>
+            </div>
+
+            <ul class="impact-list">
+              <li>
+                <strong>Portfolio Leadership:</strong> Directed Technical Project Management across 4 concurrent Value-Based Care programs, executing turnaround strategies that lifted all 4 programs from Amber/Red risk status to Green sustained performance.
+              </li>
+              <li>
+                <strong>Resource & Financial Governance:</strong> Managed 25+ client FTEs and external vendor specialists across multidisciplinary delivery tracks, overseeing a ~$12.5M client VBC portfolio.
+              </li>
+              <li>
+                <strong>Scale & Population Impact:</strong> Strengthened enterprise-wide Whole Health infrastructure delivering care optimization to over 16 million covered members and 227,000 contracted providers across 1,200 programs.
+              </li>
+              <li>
+                <strong>Equity Reporting:</strong> Architected enhanced racial stratified clinical reporting workflows for the Medicare Uplift program to identify and reduce systemic care disparities.
+              </li>
+              <li>
+                <strong>Care Matching:</strong> Implemented data routing algorithms connecting members with optimal Primary Care Providers (PCPs) for longitudinal care management.
+              </li>
+              <li>
+                <strong>Specialty Programs:</strong> Coordinated data integration and tracking for oncology initiatives to expand access to early palliative care services.
+              </li>
+            </ul>
+          </article>
+
+          <!-- Mu Sigma Entry -->
+          <article class="experience-entry" style="margin-top: 2rem;">
+            <div class="org-header">
+              <div class="org-name">Mu Sigma</div>
+              <div class="org-location-tenure">Sept 2014 — May 2016</div>
+            </div>
+            <div class="role-ladder">
+              <div class="role-tier">
+                <span class="role-tier-title">Decision Scientist</span>
+                <span class="role-tier-date">Bengaluru, India</span>
+              </div>
+            </div>
+            <ul class="impact-list">
+              <li>
+                Formulated predictive models, forecasting frameworks, and statistical analyses to resolve complex operational and supply problems for multinational enterprise accounts.
+              </li>
+              <li>
+                Translated ambiguous client problem statements into actionable algorithmic solutions and executive-level analytics decks.
+              </li>
+            </ul>
+          </article>
+
+          <!-- United Nations Entry -->
+          <article class="experience-entry" style="margin-top: 2rem;">
+            <div class="org-header">
+              <div class="org-name">United Nations</div>
+              <div class="org-location-tenure">May 2017 — Aug 2017</div>
+            </div>
+            <div class="role-ladder">
+              <div class="role-tier">
+                <span class="role-tier-title">Peacekeeping Operations Analyst</span>
+                <span class="role-tier-date">New York, NY</span>
+              </div>
+            </div>
+            <ul class="impact-list">
+              <li>
+                Supported logistical planning, mission metrics reporting, and field data evaluation for global peacekeeping operations.
+              </li>
+            </ul>
+          </article>
+
+        </section>
+
+      </main>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div>Akshay Joshi &bull; akshayjoshi.space</div>
+      <div>Single-Page Executive CV</div>
+    </footer>
+
+  </div>
+
+</body>
+</html>
