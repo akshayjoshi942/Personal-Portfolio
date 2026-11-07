@@ -20,7 +20,6 @@
       --text-muted: #4b5563;
       --text-dim: #9ca3af;
       --border: #e5e7eb;
-      --border-subtle: #f3f4f6;
       --chip-bg: #f3f4f6;
       --chip-text: #374151;
       --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -70,35 +69,116 @@
     }
 
     .contact-block {
-      text-align: right;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      white-space: nowrap;
       display: flex;
       flex-direction: column;
-      gap: 0.25rem;
+      align-items: flex-end;
+      gap: 0.65rem;
     }
 
-    .contact-block a {
-      color: var(--text);
+    .location-tag {
+      font-size: 0.82rem;
+      color: var(--text-dim);
+    }
+
+    .action-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-linkedin {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background-color: #0a66c2;
+      color: #ffffff;
+      padding: 0.45rem 0.85rem;
+      border-radius: 5px;
+      font-size: 0.82rem;
+      font-weight: 500;
       text-decoration: none;
-      border-bottom: 1px solid var(--border);
+      transition: background-color 0.15s ease;
     }
 
-    .contact-block a:hover {
-      border-color: var(--text);
+    .btn-linkedin:hover {
+      background-color: #084e96;
+      color: #ffffff;
+    }
+
+    .btn-linkedin svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background-color: var(--chip-bg);
+      color: var(--chip-text);
+      border: 1px solid var(--border);
+      padding: 0.42rem 0.75rem;
+      border-radius: 5px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: border-color 0.15s ease;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--text-dim);
+      color: var(--text);
     }
 
     /* Summary */
     .summary-section {
-      padding: 1.75rem 0;
+      padding: 2rem 0;
       border-bottom: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
       font-size: 0.92rem;
       color: var(--text-muted);
       line-height: 1.65;
     }
 
-    /* Core Metrics Strip */
+    .summary-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      padding-left: 0.25rem;
+    }
+
+    .summary-list li {
+      position: relative;
+      padding-left: 1.15rem;
+    }
+
+    .summary-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--text-dim);
+    }
+
+    .meta-inline {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      padding-top: 0.5rem;
+      border-top: 1px dashed var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .meta-inline strong {
+      color: var(--text-muted);
+    }
+
+    /* Metrics Strip */
     .metrics-row {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -121,7 +201,7 @@
       line-height: 1.35;
     }
 
-    /* Sections */
+    /* Section Structure */
     section {
       padding-top: 2rem;
     }
@@ -132,7 +212,7 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--text-dim);
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
     }
 
     /* Experience */
@@ -214,7 +294,56 @@
       color: var(--text);
     }
 
-    /* Grid for Skills, Education, Honors */
+    /* Key Client Engagements Sub-Section */
+    .projects-container {
+      margin-top: 1.25rem;
+      padding-left: 0.5rem;
+      border-left: 2px solid var(--border);
+    }
+
+    .project-card {
+      margin-bottom: 1.15rem;
+      padding-left: 0.75rem;
+    }
+
+    .project-card:last-child {
+      margin-bottom: 0.25rem;
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    .project-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .project-date {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      white-space: nowrap;
+    }
+
+    .project-role-badge {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-top: 0.1rem;
+    }
+
+    .project-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+      line-height: 1.45;
+    }
+
+    /* Details Grid */
     .details-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -256,6 +385,54 @@
       border: 1px solid var(--border);
     }
 
+    /* Certifications Section */
+    .cert-section {
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .cert-col-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cert-item {
+      margin-bottom: 0.9rem;
+    }
+
+    .cert-name {
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.35;
+    }
+
+    .cert-meta {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+      line-height: 1.3;
+    }
+
+    .cert-id {
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      margin-top: 0.15rem;
+      word-break: break-all;
+    }
+
     /* Footer */
     footer {
       margin-top: 3rem;
@@ -263,14 +440,21 @@
       border-top: 1px solid var(--border);
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
       font-size: 0.78rem;
       color: var(--text-dim);
+    }
+
+    @media (max-width: 768px) {
+      .cert-grid { grid-template-columns: 1fr; gap: 1.5rem; }
     }
 
     @media (max-width: 680px) {
       .wrapper { padding: 1.5rem; }
       header { flex-direction: column; gap: 1rem; }
-      .contact-block { text-align: left; }
+      .contact-block { align-items: flex-start; }
       .metrics-row { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
       .details-grid { grid-template-columns: 1fr; gap: 1.5rem; }
     }
@@ -284,19 +468,42 @@
     <header>
       <div>
         <h1>Akshay Joshi</h1>
-        <div class="headline">AI &amp; Data Manager &bull; Population Health &amp; Value-Based Care</div>
+        <div class="headline">AI &amp; Data Manager &bull; Population Health / Value-Based Care</div>
         <div class="headline" style="color: var(--text-dim); font-size: 0.85rem;">Deloitte Consulting Healthcare Practice</div>
       </div>
       <div class="contact-block">
-        <div>Atlanta, Georgia</div>
-        <div><a href="mailto:akshayjoshi942@gmail.com">akshayjoshi942@gmail.com</a></div>
-        <div><a href="https://www.linkedin.com/in/akshaymjoshi" target="_blank" rel="noopener">linkedin.com/in/akshaymjoshi ↗</a></div>
+        <span class="location-tag">Atlanta, Georgia</span>
+        <div class="action-group">
+          <a class="btn-linkedin" href="https://www.linkedin.com/in/akshaymjoshi/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76c-.97 0-1.75-.79-1.75-1.76s.78-1.75 1.75-1.75 1.75.78 1.75 1.75-.78 1.76-1.75 1.76m1.4 9.74v-8.37H5.06v8.37h2.8z"/>
+            </svg>
+            Connect on LinkedIn ↗
+          </a>
+          <a class="btn-secondary" href="mailto:akshayjoshi942@gmail.com">
+            akshayjoshi942@gmail.com
+          </a>
+        </div>
       </div>
     </header>
 
     <!-- Professional Summary -->
     <div class="summary-section">
-      AI &amp; Data Manager supporting Value-Based Care (VBC) implementations for health plan and provider clients, focusing on AI/Agentic deployment, member attribution, financial reconciliation, and performance reporting. Manages large-scale portfolios across complex clinical programs—including Oncology, Serious Mental Illness (SMI), Musculoskeletal (MSK), Congestive Heart Failure (CHF), and Maternity care.
+      <p>
+        Akshay Joshi is an AI &amp; Data Manager with Deloitte's healthcare practice. In his current role, Akshay supports Value-Based Care (VBC) implementation for healthcare clients, with a focus on AI and Agentic system deployment. He supports critical programs across Oncology, Serious Mental Illness (SMI), MSK, Congestive Heart Failure (CHF), Maternity, and Chronic Episodes, managing core VBC workstreams including member attribution, financial reconciliation, and performance reporting.
+      </p>
+
+      <ul class="summary-list">
+        <li>Implemented enterprise AI strategy and Data Science fraud detection models for healthcare clients.</li>
+        <li>Supported Deloitte's flagship CSO Diagnostic program, helping Chief Strategy Officers better understand and benchmark their strategy function.</li>
+        <li>Builds AI-based Digital FTEs (DFTEs) and Healthcare Supply Chain solutions; serves as campus recruiting ambassador for Deloitte's NC State University recruitment team.</li>
+        <li>Brings 2+ years of Predictive ML experience from previous roles building marketing cross-sell and upsell models for enterprise accounts including Microsoft.</li>
+      </ul>
+
+      <div class="meta-inline">
+        <div><strong>Academic Background:</strong> M.S. in Applied Mathematics (Operations Research), NC State University — focus on problem solving and decision making under uncertainty.</div>
+        <div><strong>Personal &amp; Interests:</strong> Myers-Briggs: INTJ &bull; Reading Sci-Fi, hiking, model trains, and scale modeling. Open to mentoring incoming analytics professionals.</div>
+      </div>
     </div>
 
     <!-- Core Impact Highlights -->
@@ -321,7 +528,7 @@
 
     <!-- Experience -->
     <section>
-      <h2 class="section-header">Experience</h2>
+      <h2 class="section-header">Professional Experience</h2>
 
       <!-- Deloitte Entry -->
       <div class="exp-group">
@@ -350,12 +557,115 @@
         </div>
 
         <ul class="impact-points">
-          <li><strong>Portfolio Leadership:</strong> Serves as Technical Program Director overseeing a ~$13M client VBC portfolio, tactfully managing 25+ client FTEs and external vendor resources across multi-disciplinary engineering and clinical teams.</li>
+          <li><strong>Portfolio Leadership:</strong> Serves as Technical Program Director overseeing a ~$13M client VBC portfolio, tactfully managing 25+ client FTEs and external vendor resources across multidisciplinary engineering and clinical tracks.</li>
           <li><strong>Whole Health Initiative:</strong> Scaled infrastructure for client flagship Whole Health operations serving 16M covered members and 227K active network providers across 1,200 programs.</li>
-          <li><strong>Clinical &amp; Equity Impact:</strong> Enhanced racial stratified reporting under the Medicare Uplift program, engineered primary care provider (PCP) matching algorithms, and enabled improved access to palliative care workflows for oncology patients.</li>
-          <li><strong>Payment Models &amp; Diagnostics:</strong> Managed primary care payment model implementations for Medicare &amp; Medicaid lines of business; led the Chief Strategy Officer (CSO) Strategy Diagnostic cloud platform using Qualtrics, Dataiku DSS, and Tableau.</li>
+          <li><strong>Clinical &amp; Equity Impact:</strong> Enhanced racial stratified reporting under the Medicare Uplift program, engineered primary care provider (PCP) routing algorithms, and expanded oncology access to palliative care workflows.</li>
+          <li><strong>Payment Models &amp; Diagnostics:</strong> Managed primary care payment model implementations for Medicare and Medicaid lines of business; led the Chief Strategy Officer (CSO) Strategy Diagnostic cloud platform using Qualtrics, Dataiku DSS, and Tableau.</li>
           <li><strong>Revenue Operations:</strong> Led solution design and functional deployments for billing transformations that delivered $30M+ to team margin and $210M+ in verified client revenue.</li>
-          <li><strong>Innovation &amp; Firm Building:</strong> Builds AI-based Digital FTEs (DFTEs) and healthcare supply chain solutions; serves as campus recruiting ambassador for NC State University.</li>
+        </ul>
+
+        <!-- Key Client Projects Under Deloitte -->
+        <div style="margin-top: 1.5rem;">
+          <div style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-dim); margin-bottom: 0.75rem;">
+            Key Client Engagements &amp; Project Leadership
+          </div>
+          <div class="projects-container">
+
+            <div class="project-card">
+              <div class="project-header">
+                <span class="project-title">Value Based Care | VBC Product Platform</span>
+                <span class="project-date">Jan 2025 — Present</span>
+              </div>
+              <div class="project-role-badge">Lead Program Manager &bull; Leading US Health Plan</div>
+              <p class="project-desc">
+                Leading the implementation of an enterprise VBC product suite to enable value-based, patient-centered program administration, driving down healthcare administrative costs while improving clinical quality and patient outcomes.
+              </p>
+            </div>
+
+            <div class="project-card">
+              <div class="project-header">
+                <span class="project-title">Value Based Care | PC Payment Models for Medicare &amp; Medicaid</span>
+                <span class="project-date">Mar 2024 — Dec 2024</span>
+              </div>
+              <div class="project-role-badge">Project Manager &bull; Major US Healthcare Enterprise</div>
+              <p class="project-desc">
+                Directed cross-functional implementation teams to deploy advanced primary care payment models and performance incentives across Medicare and Medicaid lines of business.
+              </p>
+            </div>
+
+            <div class="project-card">
+              <div class="project-header">
+                <span class="project-title">Clinical Claim Audit Strategic Implementation</span>
+                <span class="project-date">Feb 2023 — Feb 2024</span>
+              </div>
+              <div class="project-role-badge">Strategy Lead &bull; Healthcare Payer Practice</div>
+              <p class="project-desc">
+                Led strategic planning and program execution for enterprise clinical claim audits, establishing operational governance to recover claim inaccuracies, reduce overall trend costs, and uphold clinical care quality.
+              </p>
+            </div>
+
+            <div class="project-card">
+              <div class="project-header">
+                <span class="project-title">Data Science Modelling for Clinical Claim Audit &amp; Provider Experience</span>
+                <span class="project-date">Feb 2023 — Feb 2024</span>
+              </div>
+              <div class="project-role-badge">Clinical Payment Accuracy Technical Lead</div>
+              <p class="project-desc">
+                Directed end-to-end data science lifecycle development for claim audits and provider workflows, coordinating across stakeholders to align algorithms with Responsible AI frameworks and enterprise business goals.
+              </p>
+            </div>
+
+            <div class="project-card">
+              <div class="project-header">
+                <span class="project-title">Fraud Savings Monetization &amp; Reporting</span>
+                <span class="project-date">Jul 2018 — Feb 2023</span>
+              </div>
+              <div class="project-role-badge">Functional Resource (2018) &rarr; Technical Lead (2021 — 2023)</div>
+              <p class="project-desc">
+                Spearheaded big-data fraud detection pipelines (Hadoop) to incentivize bottom-line savings for healthcare members while safeguarding compliance, program integrity, and regulatory reporting standards.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- NC State Entry -->
+      <div class="exp-group">
+        <div class="exp-main">
+          <div class="company-name">North Carolina State University</div>
+          <div class="total-tenure">Aug 2017 — May 2018 (10 mos) &bull; Raleigh-Durham, NC</div>
+        </div>
+        <div class="role-ladder">
+          <div class="role-row past">
+            <span>Graduate Writing Consultant</span>
+            <span class="role-dates">Aug 2017 — May 2018</span>
+          </div>
+        </div>
+        <ul class="impact-points">
+          <li>Collaborated with graduate students to brainstorm, outline, organize ideas, and review drafts across multidisciplinary writing styles (STEM, social sciences, humanities) tailored to academic standards.</li>
+          <li>Consulted graduate students on high-stakes academic write-ups including funding proposals, dissertations, cover letters, reflections, personal essays, and abstracts.</li>
+          <li>Coached non-native English speakers regarding written language accessibility and academic rhetoric.</li>
+        </ul>
+      </div>
+
+      <!-- United Nations Entry -->
+      <div class="exp-group">
+        <div class="exp-main">
+          <div class="company-name">United Nations</div>
+          <div class="total-tenure">May 2017 — Aug 2017 (4 mos) &bull; New York, NY</div>
+        </div>
+        <div class="role-ladder">
+          <div class="role-row past">
+            <span>Peacekeeping Operations Analyst Intern</span>
+            <span class="role-dates">May 2017 — Aug 2017</span>
+          </div>
+        </div>
+        <ul class="impact-points">
+          <li>Analyzed the operational performance of the global mission support portfolio against critical indicators.</li>
+          <li>Supported analytics teams in data pipeline preparation, relational data models, and survey evaluation.</li>
+          <li>Developed executive dashboards and visualizations for senior leadership and provided operational user support.</li>
+          <li>Executed data mining, mathematical optimization, metrics development, and predictive forecasting for field ops.</li>
         </ul>
       </div>
 
@@ -363,39 +673,47 @@
       <div class="exp-group">
         <div class="exp-main">
           <div class="company-name">Mu Sigma Inc.</div>
-          <div class="total-tenure">Sept 2014 — May 2016 &bull; Bengaluru, India</div>
+          <div class="total-tenure">Sep 2014 — May 2016 (1 yr 9 mos) &bull; Bengaluru, India</div>
         </div>
         <div class="role-ladder">
           <div class="role-row past">
             <span>Data Scientist</span>
-            <span class="role-dates">1 yr 9 mos</span>
+            <span class="role-dates">Sep 2014 — May 2016</span>
           </div>
         </div>
         <ul class="impact-points">
-          <li>Led a 9-member analytics pod managing a ~$1M analytics-as-a-service portfolio for a global software and devices enterprise.</li>
-          <li>Built predictive marketing cross-sell/upsell models, account-targeting dashboards, and time-series forecasting pipelines using Azure ML, R, T-SQL, and SSIS.</li>
+          <li>Operated in an Analytics-as-a-Service environment with deep exposure to enterprise big data analytics.</li>
+          <li>Led a team of 9 members directing a ~$1M portfolio for a leading global software and devices conglomerate.</li>
+          <li>Executed a 2-year analytic roadmap by designing proof-of-concepts across multiple workstreams for global marketing operations.</li>
+          <li>Led direct client communication and project delivery to facilitate data-driven executive decision-making.</li>
+          <li>
+            <strong>Key Projects:</strong> Global Marketing Operations Predictive Analytics Platform, Partner Account Targeting Global Overview Dashboard, Online Retail Sales Prescriptive Dashboard.
+          </li>
+          <li>Engineered forecasting models and time-series analyses using T-SQL, SSIS, Azure ML, R, and Excel for model training, validation, and dashboard visualization.</li>
         </ul>
       </div>
 
-      <!-- United Nations Entry -->
+      <!-- HMT Limited Entry -->
       <div class="exp-group" style="margin-bottom: 0;">
         <div class="exp-main">
-          <div class="company-name">United Nations</div>
-          <div class="total-tenure">May 2017 — Aug 2017 &bull; New York, NY</div>
+          <div class="company-name">HMT Limited</div>
+          <div class="total-tenure">Jun 2013 — Jul 2013 (2 mos) &bull; Kochi, Kerala, India</div>
         </div>
         <div class="role-ladder">
           <div class="role-row past">
-            <span>Peacekeeping Operations Analyst Intern</span>
-            <span class="role-dates">4 mos</span>
+            <span>Summer Intern</span>
+            <span class="role-dates">Jun 2013 — Jul 2013</span>
           </div>
         </div>
         <ul class="impact-points">
-          <li>Evaluated global mission support operations against key performance indicators; developed executive visualization dashboards and predictive metrics for senior leadership.</li>
+          <li>Completed comprehensive industrial familiarization training in machine-tool manufacturing operations.</li>
+          <li>Audited plant layout and authored an operational report analyzing the cross-functional flow of materials and machining processes.</li>
+          <li>Identified and recommended inventory layout modifications that directly decreased machine setup times.</li>
         </ul>
       </div>
     </section>
 
-    <!-- Education, Competencies, Honors Grid -->
+    <!-- Details Grid: Education & Competencies -->
     <div class="details-grid">
       <div>
         <h2 class="section-header">Education</h2>
@@ -423,45 +741,153 @@
         <h2 class="section-header">Competencies &amp; Tooling</h2>
         
         <div style="margin-bottom: 1rem;">
-          <div class="item-sub" style="font-weight: 500; color: var(--text); margin-bottom: 0.2rem;">Healthcare &amp; Strategy</div>
+          <div class="item-sub" style="font-weight: 500; color: var(--text); margin-bottom: 0.2rem;">Strategy &amp; Domain</div>
           <div class="chip-cloud">
+            <span class="chip">Strategy Implementation</span>
+            <span class="chip">AI Strategy</span>
             <span class="chip">Value-Based Care (VBC)</span>
             <span class="chip">Healthcare Compliance</span>
             <span class="chip">Member Attribution</span>
             <span class="chip">Financial Reconciliation</span>
             <span class="chip">Population Health</span>
-            <span class="chip">AI / Agentic Systems</span>
-          </div>
-        </div>
-
-        <div style="margin-bottom: 1rem;">
-          <div class="item-sub" style="font-weight: 500; color: var(--text); margin-bottom: 0.2rem;">Analytics &amp; Data Engineering</div>
-          <div class="chip-cloud">
-            <span class="chip">Python</span>
-            <span class="chip">R</span>
-            <span class="chip">SQL / T-SQL</span>
-            <span class="chip">Tableau</span>
-            <span class="chip">Dataiku DSS</span>
-            <span class="chip">UiPath RPA</span>
-            <span class="chip">GCP ML</span>
-            <span class="chip">Microsoft Azure</span>
           </div>
         </div>
 
         <div>
-          <div class="item-sub" style="font-weight: 500; color: var(--text); margin-bottom: 0.2rem;">Certifications</div>
+          <div class="item-sub" style="font-weight: 500; color: var(--text); margin-bottom: 0.2rem;">Tools &amp; Analytics</div>
           <div class="chip-cloud">
-            <span class="chip">Microsoft Certified: Azure Fundamentals</span>
-            <span class="chip">Life Sciences &amp; Health Care Foundation</span>
+            <span class="chip">Tableau</span>
+            <span class="chip">Python</span>
+            <span class="chip">R</span>
+            <span class="chip">SQL / T-SQL</span>
+            <span class="chip">SSIS</span>
+            <span class="chip">Hadoop</span>
+            <span class="chip">Azure ML</span>
+            <span class="chip">Microsoft Excel</span>
+            <span class="chip">UiPath</span>
+            <span class="chip">Dataiku DSS</span>
+            <span class="chip">Machine Learning</span>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Certifications Section -->
+    <div class="cert-section">
+      <h2 class="section-header">Certifications &amp; Accreditations</h2>
+      <div class="cert-grid">
+
+        <!-- Healthcare Column -->
+        <div>
+          <div class="cert-col-title">Healthcare &amp; Value-Based Care</div>
+
+          <div class="cert-item">
+            <div class="cert-name">Industry Proficiency Advanced: Health Care</div>
+            <div class="cert-meta">Deloitte &bull; Jul 2026</div>
+            <div class="cert-id">ID: f8369ba0-501b-4230-8590-0e1b59c83c59</div>
+          </div>
+
+          <div class="cert-item">
+            <div class="cert-name">Value-Based Care Specialization</div>
+            <div class="cert-meta">University of Houston &bull; Jun 2025</div>
+            <div class="cert-id">ID: cd5bf289676c67f5e97c4f4f96682668</div>
+          </div>
+
+          <div class="cert-item">
+            <div class="cert-name">Industry Proficiency Intermediate: Health Care</div>
+            <div class="cert-meta">Deloitte &bull; Mar 2025</div>
+            <div class="cert-id">ID: 64c165bc-f09a-4bec-807c-5d6af2801e81</div>
+          </div>
+
+          <div class="cert-item">
+            <div class="cert-name">World of Medicare</div>
+            <div class="cert-meta">U.S. Dept. of Health &amp; Human Services &bull; Aug 2024</div>
+          </div>
+
+          <div class="cert-item">
+            <div class="cert-name">Introduction to Value-Based Healthcare</div>
+            <div class="cert-meta">Value Intelligence &bull; May 2024</div>
+            <div class="cert-id">ID: UC-8b12291d-98da-40e3-be25-f1d8fb1701dc</div>
+          </div>
+
+          <div class="cert-item">
+            <div class="cert-name">Industry Proficiency Foundation: Life Sciences &amp; Health Care</div>
+            <div class="cert-meta">Deloitte &bull; Feb 2023</div>
+          </div>
+        </div>
+
+        <!-- AI Column -->
+        <div>
+          <div class="cert-col-title">Artificial Intelligence &amp; LLMs</div>
+
+          <div class="cert-item">
+            <div class="cert-name">AI Fluency: Framework &amp; Foundations</div>
+            <div class="cert-meta">Anthropic</div>
+            <div class="cert-id">ID: cdfv8334c8uw</div>
+          </div>
+
+          <div class="cert-item">
+            <div class="cert-name">Claude 101</div>
+            <div class="cert-meta">Anthropic &bull; Mar 2026</div>
+            <div class="cert-id">ID: bu6q8ega9cn7</div>
+          </div>
+
+          <div class="cert-item">
+            <div class="cert-name">Generative AI Leader Certification</div>
+            <div class="cert-meta">Google &bull; Dec 2025 (Exp. Dec 2028)</div>
+          </div>
+
+          <div class="cert-item">
+            <div class="cert-name">Deloitte AI Academy | Prompt Engineering for All</div>
+            <div class="cert-meta">Deloitte &bull; Dec 2023</div>
+          </div>
+
+          <div class="cert-item">
+            <div class="cert-name">ChatGPT Prompt Engineering for Developers</div>
+            <div class="cert-meta">DeepLearning.AI &bull; May 2023</div>
+          </div>
+        </div>
+
+        <!-- Platforms Column -->
+        <div>
+          <div class="cert-col-title">Platforms &amp; Leadership</div>
+
+          <div class="cert-item">
+            <div class="cert-name">Deloitte Facilitator Experience</div>
+            <div class="cert-meta">Deloitte &bull; Nov 2024</div>
+            <div class="cert-id">ID: 0000349456</div>
+          </div>
+
+          <div class="cert-item">
+            <div class="cert-name">Microsoft Certified: Azure Fundamentals</div>
+            <div class="cert-meta">Microsoft</div>
+          </div>
+
+          <div class="cert-item">
+            <div class="cert-name">Tableau Certified Associate Consultant</div>
+            <div class="cert-meta">Tableau &bull; Issued Aug 2022</div>
+          </div>
+
+          <div class="cert-item">
+            <div class="cert-name">Dataiku Core Designer</div>
+            <div class="cert-meta">Dataiku</div>
+          </div>
+        </div>
+
       </div>
     </div>
 
     <!-- Footer -->
     <footer>
       <div>Akshay Joshi &bull; akshayjoshi.space</div>
-      <div>Last updated November 2026</div>
+      <div>
+        <a class="btn-linkedin" style="font-size: 0.76rem; padding: 0.35rem 0.7rem;" href="https://www.linkedin.com/in/akshaymjoshi/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76c-.97 0-1.75-.79-1.75-1.76s.78-1.75 1.75-1.75 1.75.78 1.75 1.75-.78 1.76-1.75 1.76m1.4 9.74v-8.37H5.06v8.37h2.8z"/>
+          </svg>
+          LinkedIn Profile ↗
+        </a>
+      </div>
     </footer>
 
   </div>
