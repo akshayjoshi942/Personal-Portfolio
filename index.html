@@ -1,506 +1,338 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Akshay Joshi | AI & Data Strategy Manager</title>
-  <meta name="description" content="Akshay Joshi - AI & Data Strategy Manager at Deloitte Consulting specializing in Value-Based Care." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #fdfdfd;
-      --surface: #ffffff;
-      --text: #111827;
-      --text-muted: #4b5563;
-      --text-dim: #6b7280;
-      --line: #e5e7eb;
-      --line-dark: #111827;
-      --accent: #0f172a;
-      --serif: 'Newsreader', Georgia, serif;
-      --sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    }
-
-    * {
+    *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-
     body {
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: var(--sans);
+      background-color: #fcfcfc;
+      color: #1a1a1a;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      padding: 3.5rem 1.5rem;
+      padding: 3rem 1.5rem;
     }
-
-    .wrapper {
-      max-width: 960px;
+    .container {
+      max-width: 900px;
       margin: 0 auto;
-      background: var(--surface);
+      background: #ffffff;
+      padding: 2.5rem;
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
     }
-
-    /* Header */
     header {
-      padding-bottom: 2rem;
-      border-bottom: 2px solid var(--line-dark);
+      border-bottom: 2px solid #1a1a1a;
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
       flex-wrap: wrap;
-      gap: 1.5rem;
+      gap: 1rem;
     }
-
-    .header-main h1 {
-      font-family: var(--serif);
-      font-size: 2.75rem;
-      font-weight: 500;
-      letter-spacing: -0.02em;
+    h1 {
+      font-family: "Georgia", Cambria, "Times New Roman", serif;
+      font-size: 2.5rem;
+      font-weight: normal;
+      color: #111;
       line-height: 1.1;
-      color: var(--accent);
     }
-
-    .header-main p {
+    .subtitle {
       font-size: 1.05rem;
+      color: #555;
+      margin-top: 0.35rem;
       font-weight: 500;
-      color: var(--text-muted);
-      margin-top: 0.5rem;
-      letter-spacing: -0.01em;
     }
-
-    .header-meta {
-      text-align: right;
-      font-size: 0.88rem;
-      color: var(--text-dim);
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
+    .contact-links {
+      font-size: 0.9rem;
+      color: #666;
     }
-
-    .header-meta a {
-      color: var(--text);
+    .contact-links a {
+      color: #111;
       text-decoration: underline;
-      text-underline-offset: 3px;
     }
-
-    .header-meta a:hover {
-      color: var(--text-muted);
+    .summary-box {
+      font-family: "Georgia", Cambria, serif;
+      font-size: 1.15rem;
+      color: #222;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #eee;
     }
-
-    /* Executive Summary Callout */
-    .summary-section {
-      padding: 2rem 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .summary-text {
-      font-family: var(--serif);
-      font-size: 1.25rem;
-      line-height: 1.65;
-      color: #1f2937;
-      font-weight: 400;
-    }
-
-    /* 2-Column Grid Layout */
-    .content-grid {
+    .layout-grid {
       display: grid;
       grid-template-columns: 260px 1fr;
-      gap: 3.5rem;
-      padding-top: 2.5rem;
+      gap: 3rem;
     }
-
-    /* Section Typography */
-    h2.section-heading {
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
+    h2.sidebar-title {
+      font-size: 0.8rem;
       text-transform: uppercase;
-      color: var(--text-dim);
-      margin-bottom: 1.25rem;
-      padding-bottom: 0.4rem;
-      border-bottom: 1px solid var(--line);
+      letter-spacing: 0.1em;
+      color: #777;
+      border-bottom: 1px solid #e5e5e5;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1rem;
     }
-
-    /* Left Sidebar */
-    .sidebar {
-      display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
+    .sidebar-section {
+      margin-bottom: 2rem;
     }
-
-    .sidebar-block h3 {
+    .sidebar-item {
+      margin-bottom: 1rem;
+    }
+    .sidebar-item h3 {
       font-size: 0.95rem;
+      color: #111;
       font-weight: 600;
-      color: var(--text);
-      margin-bottom: 0.25rem;
     }
-
-    .sidebar-block p {
+    .sidebar-item p {
       font-size: 0.88rem;
-      color: var(--text-muted);
+      color: #555;
     }
-
-    .sub-detail {
-      font-size: 0.82rem;
-      color: var(--text-dim);
-      margin-top: 0.15rem;
-    }
-
-    .item-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .tag-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-      margin-top: 0.5rem;
-    }
-
     .tag-category {
-      font-size: 0.78rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-dim);
+      font-size: 0.8rem;
+      font-weight: bold;
+      color: #333;
       margin-top: 0.6rem;
     }
-
-    .tag-values {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.5;
+    .tag-desc {
+      font-size: 0.85rem;
+      color: #555;
+      line-height: 1.45;
     }
-
-    /* Main Experience Column */
-    .main-column {
-      display: flex;
-      flex-direction: column;
-      gap: 2.75rem;
+    .main-section-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #777;
+      border-bottom: 1px solid #e5e5e5;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1.5rem;
     }
-
-    .experience-entry {
-      display: flex;
-      flex-direction: column;
-      gap: 0.85rem;
+    .job-entry {
+      margin-bottom: 2.5rem;
     }
-
-    .org-header {
+    .job-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      border-bottom: 1px solid var(--line);
-      padding-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
     }
-
-    .org-name {
-      font-family: var(--serif);
-      font-size: 1.45rem;
-      font-weight: 600;
-      color: var(--accent);
+    .company-title {
+      font-family: "Georgia", Cambria, serif;
+      font-size: 1.35rem;
+      font-weight: bold;
+      color: #111;
     }
-
-    .org-location-tenure {
+    .job-dates {
       font-size: 0.88rem;
-      font-weight: 500;
-      color: var(--text-dim);
+      color: #666;
     }
-
-    /* Role Progression Ladder */
-    .role-ladder {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      margin: 0.25rem 0 0.75rem 0;
-    }
-
-    .role-tier {
+    .role-row {
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
       font-size: 0.92rem;
+      padding: 0.2rem 0;
     }
-
-    .role-tier-title {
+    .role-name {
       font-weight: 600;
-      color: var(--text);
+      color: #222;
     }
-
-    .role-tier.current .role-tier-title {
-      color: #047857;
+    .role-name.current {
+      color: #0b6e4f;
     }
-
-    .role-tier-date {
-      font-size: 0.82rem;
-      color: var(--text-dim);
+    .role-period {
+      color: #777;
+      font-size: 0.85rem;
     }
-
-    ul.impact-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.65rem;
+    .bullet-list {
+      list-style-type: none;
+      margin-top: 1rem;
     }
-
-    ul.impact-list li {
+    .bullet-list li {
       position: relative;
       padding-left: 1.25rem;
-      font-size: 0.94rem;
-      color: var(--text-muted);
+      font-size: 0.92rem;
+      color: #444;
       line-height: 1.6;
+      margin-bottom: 0.5rem;
     }
-
-    ul.impact-list li::before {
+    .bullet-list li::before {
       content: "—";
       position: absolute;
       left: 0;
-      color: var(--text-dim);
+      color: #888;
     }
-
-    ul.impact-list li strong {
-      color: var(--text);
-      font-weight: 600;
+    .bullet-list li strong {
+      color: #111;
     }
-
-    /* Footer */
     footer {
-      margin-top: 4rem;
-      padding-top: 1.75rem;
-      border-top: 1px solid var(--line);
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #eee;
+      font-size: 0.82rem;
+      color: #777;
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      font-size: 0.82rem;
-      color: var(--text-dim);
     }
-
-    /* Print Stylesheet */
-    @media print {
-      body { padding: 0; background: #fff; }
-      .wrapper { max-width: 100%; }
-      header { border-bottom-width: 1px; }
-      .content-grid { gap: 2rem; }
-    }
-
-    /* Mobile Responsiveness */
-    @media (max-width: 768px) {
-      body { padding: 2rem 1.25rem; }
+    @media (max-width: 720px) {
+      .container { padding: 1.5rem; }
+      .layout-grid { grid-template-columns: 1fr; gap: 2rem; }
       header { flex-direction: column; align-items: flex-start; }
-      .header-meta { text-align: left; }
-      .content-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .header-main h1 { font-size: 2.25rem; }
-      .summary-text { font-size: 1.1rem; }
     }
   </style>
 </head>
 <body>
 
-  <div class="wrapper">
-
-    <!-- Header -->
+  <div class="container">
     <header>
-      <div class="header-main">
+      <div>
         <h1>Akshay Joshi</h1>
-        <p>AI & Data Strategy Manager — Healthcare Value-Based Care</p>
+        <div class="subtitle">AI & Data Strategy Manager — Healthcare Value-Based Care</div>
       </div>
-      <div class="header-meta">
-        <span>Atlanta, Georgia</span>
-        <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn Profile ↗</a>
+      <div class="contact-links">
+        <span>Atlanta, GA</span> &bull;
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </header>
 
-    <!-- Executive Summary -->
-    <section class="summary-section">
-      <p class="summary-text">
-        Technical Project Manager and Data Strategist leading enterprise healthcare implementations. Specializes in recovering complex Value-Based Care (VBC) portfolios from risk to stable delivery, orchestrating cross-functional teams of 25+ resources, and translating clinical informatics into measurable member outcomes and provider enablement.
-      </p>
-    </section>
-
-    <!-- Two-Column Layout -->
-    <div class="content-grid">
-
-      <!-- Left Rail: Education, Tools, Certifications -->
-      <aside class="sidebar">
-
-        <section>
-          <h2 class="section-heading">Education</h2>
-          <div class="item-list">
-            <div class="sidebar-block">
-              <h3>North Carolina State University</h3>
-              <p>Master of Science, Operations Research</p>
-              <div class="sub-detail">Raleigh, North Carolina</div>
-            </div>
-            <div class="sidebar-block">
-              <h3>RTM Nagpur University</h3>
-              <p>Bachelor of Engineering, Mechanical</p>
-              <div class="sub-detail">Nagpur, India</div>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <h2 class="section-heading">Core Competencies</h2>
-          <div class="tag-group">
-            <div class="tag-category">Domain</div>
-            <div class="tag-values">Value-Based Care (VBC), Population Health Informatics, Technical Project Management, Healthcare AI & Solution Architecture.</div>
-            
-            <div class="tag-category">Analytics & Data</div>
-            <div class="tag-values">Machine Learning, Predictive Forecasting, Google Cloud Platform (GCP), Snowflake, SQL, Python, Tableau.</div>
-
-            <div class="tag-category">Execution</div>
-            <div class="tag-values">UiPath RPA, Client & Vendor Governance, Data Governance, Whole Health Strategy.</div>
-          </div>
-        </section>
-
-        <section>
-          <h2 class="section-heading">Certifications</h2>
-          <div class="item-list">
-            <div class="sidebar-block">
-              <h3>Deloitte Certified Product Manager</h3>
-            </div>
-            <div class="sidebar-block">
-              <h3>Tableau Certified Consultant</h3>
-            </div>
-            <div class="sidebar-block">
-              <h3>OpenAI Prompt Engineering</h3>
-            </div>
-            <div class="sidebar-block">
-              <h3>Microsoft Azure (AZ-900)</h3>
-            </div>
-            <div class="sidebar-block">
-              <h3>Dataiku Core Designer</h3>
-            </div>
-            <div class="sidebar-block">
-              <h3>UiPath RPA Associate</h3>
-            </div>
-            <div class="sidebar-block">
-              <h3>Alteryx Micro-Credential</h3>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <h2 class="section-heading">Academic Service</h2>
-          <div class="sidebar-block">
-            <h3>NC State University</h3>
-            <p>Graduate Writing Consultant (2017–2018)</p>
-          </div>
-        </section>
-
-      </aside>
-
-      <!-- Main Column: Detailed Experience -->
-      <main class="main-column">
-
-        <section>
-          <h2 class="section-heading">Professional Experience</h2>
-
-          <!-- Deloitte Entry -->
-          <article class="experience-entry">
-            <div class="org-header">
-              <div class="org-name">Deloitte Consulting LLP</div>
-              <div class="org-location-tenure">2018 — Present</div>
-            </div>
-
-            <div class="role-ladder">
-              <div class="role-tier current">
-                <span class="role-tier-title">AI & Data Manager</span>
-                <span class="role-tier-date">June 2025 — Present</span>
-              </div>
-              <div class="role-tier">
-                <span class="role-tier-title">Senior Strategy & AI Consultant</span>
-                <span class="role-tier-date">June 2022 — May 2025</span>
-              </div>
-              <div class="role-tier">
-                <span class="role-tier-title">Strategy & AI Consultant</span>
-                <span class="role-tier-date">June 2020 — May 2022</span>
-              </div>
-              <div class="role-tier">
-                <span class="role-tier-title">Business Technology Analyst</span>
-                <span class="role-tier-date">July 2018 — May 2020</span>
-              </div>
-            </div>
-
-            <ul class="impact-list">
-              <li>
-                <strong>Portfolio Leadership:</strong> Directed Technical Project Management across 4 concurrent Value-Based Care programs, executing turnaround strategies that lifted all 4 programs from Amber/Red risk status to Green sustained performance.
-              </li>
-              <li>
-                <strong>Resource & Financial Governance:</strong> Managed 25+ client FTEs and external vendor specialists across multidisciplinary delivery tracks, overseeing a ~$12.5M client VBC portfolio.
-              </li>
-              <li>
-                <strong>Scale & Population Impact:</strong> Strengthened enterprise-wide Whole Health infrastructure delivering care optimization to over 16 million covered members and 227,000 contracted providers across 1,200 programs.
-              </li>
-              <li>
-                <strong>Equity Reporting:</strong> Architected enhanced racial stratified clinical reporting workflows for the Medicare Uplift program to identify and reduce systemic care disparities.
-              </li>
-              <li>
-                <strong>Care Matching:</strong> Implemented data routing algorithms connecting members with optimal Primary Care Providers (PCPs) for longitudinal care management.
-              </li>
-              <li>
-                <strong>Specialty Programs:</strong> Coordinated data integration and tracking for oncology initiatives to expand access to early palliative care services.
-              </li>
-            </ul>
-          </article>
-
-          <!-- Mu Sigma Entry -->
-          <article class="experience-entry" style="margin-top: 2rem;">
-            <div class="org-header">
-              <div class="org-name">Mu Sigma</div>
-              <div class="org-location-tenure">Sept 2014 — May 2016</div>
-            </div>
-            <div class="role-ladder">
-              <div class="role-tier">
-                <span class="role-tier-title">Decision Scientist</span>
-                <span class="role-tier-date">Bengaluru, India</span>
-              </div>
-            </div>
-            <ul class="impact-list">
-              <li>
-                Formulated predictive models, forecasting frameworks, and statistical analyses to resolve complex operational and supply problems for multinational enterprise accounts.
-              </li>
-              <li>
-                Translated ambiguous client problem statements into actionable algorithmic solutions and executive-level analytics decks.
-              </li>
-            </ul>
-          </article>
-
-          <!-- United Nations Entry -->
-          <article class="experience-entry" style="margin-top: 2rem;">
-            <div class="org-header">
-              <div class="org-name">United Nations</div>
-              <div class="org-location-tenure">May 2017 — Aug 2017</div>
-            </div>
-            <div class="role-ladder">
-              <div class="role-tier">
-                <span class="role-tier-title">Peacekeeping Operations Analyst</span>
-                <span class="role-tier-date">New York, NY</span>
-              </div>
-            </div>
-            <ul class="impact-list">
-              <li>
-                Supported logistical planning, mission metrics reporting, and field data evaluation for global peacekeeping operations.
-              </li>
-            </ul>
-          </article>
-
-        </section>
-
-      </main>
-
+    <div class="summary-box">
+      Technical Project Manager and Data Strategist leading enterprise healthcare implementations. Specializes in recovering complex Value-Based Care (VBC) portfolios from risk to stable delivery, orchestrating cross-functional teams of 25+ resources, and translating clinical informatics into measurable member outcomes and provider enablement.
     </div>
 
-    <!-- Footer -->
+    <div class="layout-grid">
+      <!-- Left Column -->
+      <aside>
+        <div class="sidebar-section">
+          <h2 class="sidebar-title">Education</h2>
+          <div class="sidebar-item">
+            <h3>North Carolina State University</h3>
+            <p>M.S., Operations Research</p>
+          </div>
+          <div class="sidebar-item">
+            <h3>RTM Nagpur University</h3>
+            <p>B.E., Mechanical Engineering</p>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <h2 class="sidebar-title">Core Competencies</h2>
+          <div class="tag-category">Domain</div>
+          <p class="tag-desc">Value-Based Care (VBC), Population Health Informatics, Technical Project Management, Healthcare AI.</p>
+
+          <div class="tag-category">Analytics & Data</div>
+          <p class="tag-desc">Machine Learning, Predictive Forecasting, GCP, Snowflake, SQL, Python, Tableau.</p>
+
+          <div class="tag-category">Platforms</div>
+          <p class="tag-desc">UiPath RPA, Client & Vendor Governance, Data Architecture.</p>
+        </div>
+
+        <div class="sidebar-section">
+          <h2 class="sidebar-title">Certifications</h2>
+          <div class="sidebar-item">
+            <p>Deloitte Certified Product Manager</p>
+          </div>
+          <div class="sidebar-item">
+            <p>Tableau Certified Consultant</p>
+          </div>
+          <div class="sidebar-item">
+            <p>OpenAI Prompt Engineering</p>
+          </div>
+          <div class="sidebar-item">
+            <p>Microsoft Azure (AZ-900)</p>
+          </div>
+          <div class="sidebar-item">
+            <p>Dataiku Core Designer</p>
+          </div>
+          <div class="sidebar-item">
+            <p>UiPath RPA Associate</p>
+          </div>
+          <div class="sidebar-item">
+            <p>Alteryx Micro-Credential</p>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Right Column -->
+      <main>
+        <h2 class="main-section-title">Professional Experience</h2>
+
+        <div class="job-entry">
+          <div class="job-header">
+            <div class="company-title">Deloitte Consulting</div>
+            <div class="job-dates">2018 — Present</div>
+          </div>
+
+          <div style="margin-bottom: 0.75rem;">
+            <div class="role-row">
+              <span class="role-name current">AI & Data Manager</span>
+              <span class="role-period">June 2025 — Present</span>
+            </div>
+            <div class="role-row">
+              <span class="role-name">Senior Strategy & AI Consultant</span>
+              <span class="role-period">June 2022 — May 2025</span>
+            </div>
+            <div class="role-row">
+              <span class="role-name">Strategy & AI Consultant</span>
+              <span class="role-period">June 2020 — May 2022</span>
+            </div>
+            <div class="role-row">
+              <span class="role-name">Business Technology Analyst</span>
+              <span class="role-period">July 2018 — May 2020</span>
+            </div>
+          </div>
+
+          <ul class="bullet-list">
+            <li><strong>Portfolio Leadership:</strong> Directed Technical Project Management across 4 concurrent Value-Based Care programs, executing turnaround strategies that lifted all 4 programs from Amber/Red risk status to Green sustained performance.</li>
+            <li><strong>Resource & Financial Governance:</strong> Managed 25+ client FTEs and external vendor specialists across multidisciplinary delivery tracks, overseeing a ~$12.5M client VBC portfolio.</li>
+            <li><strong>Scale & Population Impact:</strong> Strengthened enterprise-wide Whole Health infrastructure delivering care optimization to over 16 million covered members and 227,000 contracted providers across 1,200 programs.</li>
+            <li><strong>Equity Reporting:</strong> Architected enhanced racial stratified clinical reporting workflows for the Medicare Uplift program to identify and reduce systemic care disparities.</li>
+            <li><strong>Care Matching:</strong> Implemented data routing algorithms connecting members with optimal Primary Care Providers (PCPs) for longitudinal care management.</li>
+            <li><strong>Specialty Programs:</strong> Coordinated data integration and tracking for oncology initiatives to expand access to early palliative care services.</li>
+          </ul>
+        </div>
+
+        <div class="job-entry">
+          <div class="job-header">
+            <div class="company-title">Mu Sigma</div>
+            <div class="job-dates">Sept 2014 — May 2016</div>
+          </div>
+          <div class="role-row">
+            <span class="role-name">Decision Scientist</span>
+            <span class="role-period">Bengaluru, India</span>
+          </div>
+          <ul class="bullet-list">
+            <li>Formulated predictive models, forecasting frameworks, and statistical analyses to resolve complex operational and supply problems for multinational enterprise accounts.</li>
+          </ul>
+        </div>
+
+        <div class="job-entry">
+          <div class="job-header">
+            <div class="company-title">United Nations</div>
+            <div class="job-dates">May 2017 — Aug 2017</div>
+          </div>
+          <div class="role-row">
+            <span class="role-name">Peacekeeping Operations Analyst</span>
+            <span class="role-period">New York, NY</span>
+          </div>
+          <ul class="bullet-list">
+            <li>Supported logistical planning, mission metrics reporting, and field data evaluation for global peacekeeping operations.</li>
+          </ul>
+        </div>
+      </main>
+    </div>
+
     <footer>
       <div>Akshay Joshi &bull; akshayjoshi.space</div>
-      <div>Single-Page Executive CV</div>
+      <div>Executive Portfolio</div>
     </footer>
-
   </div>
 
 </body>
